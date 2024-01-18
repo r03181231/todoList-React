@@ -1,22 +1,72 @@
 import React from "react";
-import Button from "../../../item/button/Button";
 import "./todoCardList.css";
+import TodoCards from "../todoCards/TodoCards";
 
-function TodoCardsList() {
-  const delBtnText = "삭제하기";
-  const doneBtnText = "완료";
+export const TodoCardsList = ({ todoInputs, setTodoInputs }) => {
+  const onDelete = (id) => {
+    console.log(id);
+    const stayTodos = todoInputs.filter((stayTodo) => stayTodo.id !== id);
+    setTodoInputs(stayTodos);
+  };
+  const onComplete = (id) => {
+    const stayTodos = todoInputs.map((done) => {
+      console.log(done);
+      const { isDone } = done;
+      if (done.id === id) {
+        return { ...done, isDone: !isDone };
+      } else {
+        return { ...done };
+      }
+    });
+    setTodoInputs(stayTodos);
+  };
+
   return (
-    <section>
-      <div>
-        <h3>리액트 공부하기</h3>
-        <p>리액트 기초를 공부해 봅시다</p>
+    <>
+      <section>
         <div>
-          <Button name={delBtnText} />
-          <Button name={doneBtnText} />
+          <h3>working </h3>
+          {todoInputs.map((isDoneItem) => {
+            const { id, isDone } = isDoneItem;
+            if (isDone) {
+              return (
+                <TodoCards
+                  isDoneItem={isDoneItem}
+                  setTodoInputs={setTodoInputs}
+                  onComplete={onComplete}
+                  key={id}
+                  onDelete={onDelete}
+                />
+              );
+            } else {
+              return;
+            }
+          })}
         </div>
-      </div>
-    </section>
+      </section>
+      <section>
+        <div>
+          <h3>Done </h3>
+          {todoInputs.map((isDoneItem) => {
+            const { id, isDone } = isDoneItem;
+            if (!isDone) {
+              return (
+                <TodoCards
+                  isDoneItem={isDoneItem}
+                  setTodoInputs={setTodoInputs}
+                  onComplete={onComplete}
+                  key={id}
+                  onDelete={onDelete}
+                />
+              );
+            } else {
+              return;
+            }
+          })}
+        </div>
+      </section>
+    </>
   );
-}
+};
 
 export default TodoCardsList;

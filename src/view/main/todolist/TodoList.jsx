@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import TodoForm from "view/header/form/TodoForm";
 import TodoCardsList from "view/main/todoCardList/TodoCardsList";
 import "./todolist.css";
+import TodoForm from "../form/TodoForm";
 
 export const TodoList = () => {
   const [todoInputs, setTodoInputs] = useState([
@@ -9,7 +9,7 @@ export const TodoList = () => {
       id: 1,
       title: "알고리즘 풀기",
       comment: "2문제",
-      state: "working",
+      isDone: true,
     },
   ]);
   return (
