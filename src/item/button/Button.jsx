@@ -1,13 +1,12 @@
 import React from "react";
 import "./button.css";
 
-function Button({ name }) {
-  // e.preventDefault();
+export const Button = ({ name, onClick }) => {
   return (
     <>
-      <button>{name}</button>
+      <button onClick={onClick}>{name}</button>
     </>
   );
-}
+};
 
 export default Button;

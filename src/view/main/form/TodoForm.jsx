@@ -2,38 +2,37 @@ import React, { useState } from "react";
 import "./todoForm.css";
 import Button from "../../../item/button/Button";
 
-let idNum = 1;
 export const TodoForm = ({ todoInputs, setTodoInputs }) => {
   const add = "추가";
   const [todoInput, setTodoInput] = useState({
     id: 1,
     title: "",
     comment: "",
-    state: "working",
+    isDone: true,
   });
-  // let idNum = todoInput.length + 1;
+  let idNum = 1 + todoInputs.length; //Math.random() * 10000
   const titleInput = todoInput.title;
   const commentInput = todoInput.comment;
   const blankPattern = /^\s+|\s+$/g;
-
-  const onInputHandle = (e) => {
+  // 들어온 값으로 교체해주기
+  const onInputHand = (e) => {
     const name = e.target.name;
     const value = e.target.value;
 
     setTodoInput({ ...todoInput, [name]: value });
   };
-
+  //
   const onSubmitHand = (e) => {
     e.preventDefault();
-
-    console.log(todoInput);
+    // 공백이면 리턴하지마
     if (
-      titleInput.replace(blankPattern, "") === "" ||
-      commentInput.replace(blankPattern, "") === ""
-    )
-      return;
+      todoInput.title.replace(blankPattern, "") === "" ||
+      todoInput.comment.replace(blankPattern, "") === ""
+    ) {
+      return null;
+    }
     setTodoInputs([...todoInputs, { ...todoInput, id: idNum }]);
-    idNum++;
+    setTodoInput("");
   };
 
   return (
@@ -43,15 +42,15 @@ export const TodoForm = ({ todoInputs, setTodoInputs }) => {
         <input
           type="text"
           name="title"
-          value={todoInput.title}
-          onChange={onInputHandle}
+          value={titleInput}
+          onChange={onInputHand}
         />
         <label>내용</label>
         <input
           type="text"
           name="comment"
-          value={todoInput.comment}
-          onChange={onInputHandle}
+          value={commentInput}
+          onChange={onInputHand}
         />
         <Button name={add} />
       </form>
