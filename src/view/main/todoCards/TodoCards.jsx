@@ -6,7 +6,6 @@ function TodoCards({ isDoneItem, setTodoInput, onDelete, onComplete }) {
   const delBtnText = "삭제하기";
   const doneBtnText = "완료";
   const cancelBtnText = "취소";
-  console.log(id);
 
   return (
     <div>
