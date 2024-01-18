@@ -24,7 +24,7 @@ export const TodoForm = ({ todoInputs, setTodoInputs }) => {
   //
   const onSubmitHand = (e) => {
     e.preventDefault();
-    // 공백이면 리턴하지마
+    // 공백이면 null을 줘.
     if (
       todoInput.title.replace(blankPattern, "") === "" ||
       todoInput.comment.replace(blankPattern, "") === ""
@@ -42,14 +42,14 @@ export const TodoForm = ({ todoInputs, setTodoInputs }) => {
         <input
           type="text"
           name="title"
-          value={titleInput}
+          value={titleInput || ""}
           onChange={onInputHand}
         />
         <label>내용</label>
         <input
           type="text"
           name="comment"
-          value={commentInput}
+          value={commentInput || ""}
           onChange={onInputHand}
         />
         <Button name={add} />
