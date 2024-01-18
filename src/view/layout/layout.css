@@ -1,0 +1,8 @@
+@charset "utf-8";
+
+.wrap-layout {
+  min-width: 800px;
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
