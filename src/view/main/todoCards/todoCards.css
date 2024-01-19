@@ -6,3 +6,35 @@
   border-radius: 20px;
   box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.2);
 }
+
+.del-nd-done {
+  display: flex;
+  justify-content: space-between;
+}
+
+.del-btn,
+.done-btn {
+  background-color: #feb198;
+  padding: 8px 20px;
+
+  border: none;
+  border-radius: 10px;
+
+  font-size: 1rem;
+}
+
+.del-btn:hover,
+.del-btn:focus {
+  background-color: rgba(254, 177, 152, 0.6);
+}
+
+.done-btn {
+  background-color: gray;
+  color: white;
+}
+
+.done-btn:hover,
+.done-btn:focus {
+  background-color: rgba(128, 128, 128, 0.5);
+  color: #333333;
+}
