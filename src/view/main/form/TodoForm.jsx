@@ -26,16 +26,22 @@ export const TodoForm = ({ todoInputs, setTodoInputs }) => {
     const titleBlank = titleInput.replace(blankPattern, "");
     const commentBlank = commentInput.replace(blankPattern, "");
     // 공백이면 아무 것도 리턴하지 않게 해줘.
-    if (titleBlank === "" && commentBlank === "") return;
-    if (titleBlank === "" || commentBlank === "") return;
+    if (titleBlank === "" && commentBlank === "") {
+      alert("빈칸을 전부 채워주세요.");
+      return;
+    }
+    if (titleBlank === "" || commentBlank === "") {
+      alert("빈칸을 전부 채워주세요.");
+      return;
+    }
 
     setTodoInputs([...todoInputs, { ...todoInput, id: idNum }]);
     setTodoInput({ id: idNum + 1, title: "", comment: "", isDone: true });
   };
 
   return (
-    <section>
-      <form onSubmit={onSubmitHand}>
+    <section id="todo-form">
+      <form onSubmit={onSubmitHand} className="form-wrap">
         <label>제목</label>
         <input
           type="text"
@@ -50,8 +56,7 @@ export const TodoForm = ({ todoInputs, setTodoInputs }) => {
           value={commentInput}
           onChange={onInputHand}
         />
-
-        <Button name={add} />
+        <Button name={add} className={"add-btn"} />
       </form>
     </section>
   );

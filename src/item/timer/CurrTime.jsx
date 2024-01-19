@@ -9,7 +9,7 @@ export const CurrTime = () => {
   }, []);
   return (
     <>
-      <div>
+      <div className="date">
         <p>{time.toLocaleTimeString()}</p>
       </div>
     </>
