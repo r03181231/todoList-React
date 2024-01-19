@@ -9,11 +9,12 @@ export const TodoCardsList = ({ todoInputs, setTodoInputs }) => {
   };
   const onComplete = (id) => {
     const stayTodos = todoInputs.map((done) => {
+      console.log(done);
       const { isDone } = done;
-      if (done.id === id) {
-        return { ...done, isDone: !isDone };
+      if (done.id !== id) {
+        return { ...done, isDone: isDone };
       } else {
-        return { ...done };
+        return { ...done, isDone: !isDone };
       }
     });
     setTodoInputs(stayTodos);

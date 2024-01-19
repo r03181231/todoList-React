@@ -1,7 +1,12 @@
 import React from "react";
 import Button from "item/button/Button";
 
-function TodoCards({ isDoneItem, setTodoInput, onDelete, onComplete }) {
+export const TodoCards = ({
+  isDoneItem,
+  setTodoInput,
+  onDelete,
+  onComplete,
+}) => {
   const { id, title, comment, isDone } = isDoneItem;
   const delBtnText = "삭제하기";
   const doneBtnText = "완료";
@@ -20,6 +25,6 @@ function TodoCards({ isDoneItem, setTodoInput, onDelete, onComplete }) {
       </div>
     </div>
   );
-}
+};
 
 export default TodoCards;

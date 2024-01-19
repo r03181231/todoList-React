@@ -18,21 +18,23 @@ export const TodoForm = ({ todoInputs, setTodoInputs }) => {
   const onInputHand = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-
+    console.log(todoInput.isDone);
     setTodoInput({ ...todoInput, [name]: value });
+    console.log({ ...todoInput, [name]: value });
   };
   //
   const onSubmitHand = (e) => {
     e.preventDefault();
-    // 공백이면 리턴하지마
+    // 공백이면 null을 줘.
     if (
       todoInput.title.replace(blankPattern, "") === "" ||
       todoInput.comment.replace(blankPattern, "") === ""
     ) {
       return null;
     }
+    console.log([...todoInputs, { ...todoInput, id: idNum }]);
     setTodoInputs([...todoInputs, { ...todoInput, id: idNum }]);
-    setTodoInput("");
+    // setTodoInput("");
   };
 
   return (
@@ -42,14 +44,14 @@ export const TodoForm = ({ todoInputs, setTodoInputs }) => {
         <input
           type="text"
           name="title"
-          value={titleInput}
+          value={titleInput || ""}
           onChange={onInputHand}
         />
         <label>내용</label>
         <input
           type="text"
           name="comment"
-          value={commentInput}
+          value={commentInput || ""}
           onChange={onInputHand}
         />
         <Button name={add} />
