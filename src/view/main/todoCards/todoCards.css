@@ -12,10 +12,9 @@
   justify-content: space-between;
 }
 
-.del-btn,
-.done-btn {
+.del-btn {
   background-color: #feb198;
-  padding: 8px 20px;
+  padding: 8px 10px;
 
   border: none;
   border-radius: 10px;
@@ -29,6 +28,12 @@
 }
 
 .done-btn {
+  padding: 8px 26px;
+
+  border: none;
+  border-radius: 10px;
+
+  font-size: 1rem;
   background-color: gray;
   color: white;
 }
