@@ -7,3 +7,10 @@ header {
 
   padding: 10px;
 }
+
+.title-nd-name {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 20px;
+}
