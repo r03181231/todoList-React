@@ -180,7 +180,9 @@ $ cd todoList-React
 
 ## 프로젝트 구성 및 기능
 
-<p><img src="https://github.com/r03181231/todoList-React/assets/152264010/ae6eb5df-bb2b-43b1-b395-fca68a7d2526" width="400px" align="center"></p>
+<br />
+
+<p><img src="https://github.com/r03181231/todoList-React/assets/152264010/ae6eb5df-bb2b-43b1-b395-fca68a7d2526" width="500px" align="right"></p>
 
 
 
