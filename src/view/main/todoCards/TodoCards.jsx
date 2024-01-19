@@ -17,11 +17,16 @@ export const TodoCards = ({
     <div className="work-nd-done">
       <h4>{title}</h4>
       <p>{comment}</p>
-      <div>
-        <Button name={delBtnText} onClick={() => onDelete(id)} />
+      <div className="del-nd-done">
+        <Button
+          name={delBtnText}
+          onClick={() => onDelete(id)}
+          className={"del-btn"}
+        />
         <Button
           name={isDone === false ? cancelBtnText : doneBtnText}
           onClick={() => onComplete(id)}
+          className={"done-btn"}
         />
       </div>
     </div>
