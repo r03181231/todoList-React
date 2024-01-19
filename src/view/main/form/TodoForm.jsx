@@ -18,8 +18,9 @@ export const TodoForm = ({ todoInputs, setTodoInputs }) => {
   const onInputHand = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-
+    console.log(todoInput.isDone);
     setTodoInput({ ...todoInput, [name]: value });
+    console.log({ ...todoInput, [name]: value });
   };
   //
   const onSubmitHand = (e) => {
@@ -31,8 +32,9 @@ export const TodoForm = ({ todoInputs, setTodoInputs }) => {
     ) {
       return null;
     }
+    console.log([...todoInputs, { ...todoInput, id: idNum }]);
     setTodoInputs([...todoInputs, { ...todoInput, id: idNum }]);
-    setTodoInput("");
+    // setTodoInput("");
   };
 
   return (
