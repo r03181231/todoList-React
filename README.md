@@ -77,11 +77,13 @@
 <br />
 
 #### Code Convention
-- 파일 : 파스칼케이스
+- JSX파일 이름 : 파스칼케이스
 
-- 파일 내 상위 함수 : 파스칼 케이스 (ex. export const Pascal = () => {}) 
+- JSX파일 내 상위 함수의 변수 : 파스칼 케이스 (ex. export const Pascal = () => {} export Default)
 
 - 변수 : 카멜케이스
+
+- CSS파일 이름 : 카멜케이스 
 
 - 클래스명 : 대쉬(-)
 
