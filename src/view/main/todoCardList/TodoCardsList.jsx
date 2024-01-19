@@ -48,7 +48,7 @@ export const TodoCardsList = ({ todoInputs, setTodoInputs }) => {
           <h3>Done </h3>
           {todoInputs.map((isDoneItem) => {
             const { id, isDone } = isDoneItem;
-            if (!isDone) {
+            if (isDone === false) {
               return (
                 <TodoCards
                   isDoneItem={isDoneItem}

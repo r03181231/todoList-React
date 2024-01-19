@@ -19,7 +19,7 @@ export const TodoCards = ({
       <div>
         <Button name={delBtnText} onClick={() => onDelete(id)} />
         <Button
-          name={!isDone ? cancelBtnText : doneBtnText}
+          name={isDone === false ? cancelBtnText : doneBtnText}
           onClick={() => onComplete(id)}
         />
       </div>
