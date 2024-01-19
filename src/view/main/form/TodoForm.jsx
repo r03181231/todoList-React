@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./todoForm.css";
-import Button from "../../../item/button/Button";
+import Button from "../../../common/button/Button";
 
 export const TodoForm = ({ todoInputs, setTodoInputs }) => {
   const add = "추가";
