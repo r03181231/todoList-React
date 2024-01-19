@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "item/button/Button";
+import "./todoCards.css";
 
 export const TodoCards = ({
   isDoneItem,
@@ -13,7 +14,7 @@ export const TodoCards = ({
   const cancelBtnText = "취소";
 
   return (
-    <div>
+    <div className="work-nd-done">
       <h4>{title}</h4>
       <p>{comment}</p>
       <div>
