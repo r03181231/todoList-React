@@ -182,7 +182,7 @@ $ cd todoList-React
 
 <br />
 
-<p><img src="https://github.com/r03181231/todoList-React/assets/152264010/ae6eb5df-bb2b-43b1-b395-fca68a7d2526" width="500px" align="right"></p>
+<p><img src="https://github.com/r03181231/todoList-React/assets/152264010/757f242a-81c5-4957-86f2-d64e5e9c19a1" width="500px" align="right"></p>
 
 
 
