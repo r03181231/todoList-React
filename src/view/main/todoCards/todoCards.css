@@ -28,7 +28,7 @@
 }
 
 .done-btn {
-  padding: 8px 26px;
+  padding: 0px 26px;
 
   border: none;
   border-radius: 10px;
@@ -42,4 +42,14 @@
 .done-btn:focus {
   background-color: rgba(128, 128, 128, 0.5);
   color: #333333;
+}
+
+.edit-btn {
+  padding: 0px 26px;
+
+  border: 0.1rem solid gray;
+  border-radius: 10px;
+
+  font-size: 1rem;
+  background-color: #fff;
 }
