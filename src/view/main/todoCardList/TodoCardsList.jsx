@@ -3,10 +3,12 @@ import "./todoCardList.css";
 import StateTemp from "common/stateTemp/stateTemp";
 
 export const TodoCardsList = ({ todoInputs, setTodoInputs }) => {
+  //삭제 버튼
   const onDelete = (clickId) => {
     const stayTodos = todoInputs.filter((stayTodo) => stayTodo.id !== clickId);
     setTodoInputs(stayTodos);
   };
+  //완료 버튼
   const onComplete = (clickId) => {
     const stayTodos = todoInputs.map((done) => {
       const { isDone } = done;
@@ -30,6 +32,7 @@ export const TodoCardsList = ({ todoInputs, setTodoInputs }) => {
           setTodoInputs={setTodoInputs}
           onComplete={onComplete}
           onDelete={onDelete}
+          // onEdit={onEdit}
         />
       </section>
       <section>
@@ -40,6 +43,7 @@ export const TodoCardsList = ({ todoInputs, setTodoInputs }) => {
           setTodoInputs={setTodoInputs}
           onComplete={onComplete}
           onDelete={onDelete}
+          // onEdit={onEdit}
         />
       </section>
     </>

@@ -9,6 +9,7 @@ export const TodoForm = ({ todoInputs, setTodoInputs }) => {
     title: "",
     comment: "",
     isDone: true,
+    isEdit: true,
   };
   const [todoInput, setTodoInput] = useState(init);
   let idNum = 1 + todoInputs.length; //Math.random() * 10000

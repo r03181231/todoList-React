@@ -34,22 +34,27 @@
   border-radius: 10px;
 
   font-size: 1rem;
-  background-color: gray;
+  background-color: #333;
   color: white;
 }
 
 .done-btn:hover,
 .done-btn:focus {
   background-color: rgba(128, 128, 128, 0.5);
-  color: #333333;
+  color: #111;
 }
 
 .edit-btn {
   padding: 0px 26px;
 
-  border: 0.1rem solid gray;
+  border: 0.1rem solid rgba(99, 99, 99, 0.3);
   border-radius: 10px;
 
   font-size: 1rem;
   background-color: #fff;
+}
+
+.edit-btn:hover {
+  background-color: rgba(99, 99, 99, 0.2);
+  border: 1px solid #fff;
 }

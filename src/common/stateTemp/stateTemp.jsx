@@ -9,6 +9,7 @@ export const StateTemp = ({
   setTodoInputs,
   onComplete,
   onDelete,
+  onEdit,
 }) => {
   const isDoneTodos = todoInputs.filter(
     (state) => state.isDone === isDoneState
@@ -23,11 +24,13 @@ export const StateTemp = ({
           const { id } = isDoneItem;
           return (
             <TodoCards
+              key={id}
               isDoneItem={isDoneItem}
+              todoInputs={todoInputs}
               setTodoInputs={setTodoInputs}
               onComplete={onComplete}
-              key={id}
               onDelete={onDelete}
+              onEdit={onEdit}
             />
           );
         })}
