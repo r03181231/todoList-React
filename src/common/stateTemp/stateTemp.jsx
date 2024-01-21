@@ -16,8 +16,6 @@ export const StateTemp = ({
   );
   return (
     <div className="cards-wrap">
-      {/* 반복되는 것 : title, todoInputs 자료 중 isDone의 값에 따라 . filter () => .isDone !== isDoneValue */}
-      {/* filter된 값 map~ => filter 재료 :  title, todoInputs,setTodoInputs, isDoneValue="done" : "isdone",  onComplete, onDelete  */}
       <h3>{title} </h3>
       <div className="todo-card-wrap">
         {isDoneTodos.map((isDoneItem) => {
@@ -40,3 +38,9 @@ export const StateTemp = ({
 };
 
 export default StateTemp;
+{
+  /* 반복되는 것 : title, todoInputs 자료 중 isDone의 값에 따라 . filter () => .isDone !== isDoneValue */
+}
+{
+  /* filter된 값 map~ => filter 재료 :  title, todoInputs,setTodoInputs, isDoneValue="done" : "isdone",  onComplete, onDelete  */
+}

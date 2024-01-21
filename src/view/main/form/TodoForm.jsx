@@ -37,7 +37,7 @@ export const TodoForm = ({ todoInputs, setTodoInputs }) => {
     }
 
     setTodoInputs([...todoInputs, { ...todoInput, id: idNum }]);
-    setTodoInput({ id: idNum + 1, title: "", comment: "", isDone: true });
+    setTodoInput(init);
   };
 
   return (

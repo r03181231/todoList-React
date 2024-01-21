@@ -13,7 +13,6 @@ export const TodoCardsList = ({ todoInputs, setTodoInputs }) => {
     const stayTodos = todoInputs.map((done) => {
       const { isDone } = done;
       if (done.id !== clickId) {
-        //1, 2,3,4 => working(true)    1, 1 => Done(false)
         return { ...done };
       } else {
         return { ...done, isDone: !isDone };
