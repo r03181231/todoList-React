@@ -28,7 +28,6 @@ export const StateTemp = ({
               setTodoInputs={setTodoInputs}
               onComplete={onComplete}
               onDelete={onDelete}
-              onEdit={onEdit}
             />
           );
         })}
@@ -38,9 +37,8 @@ export const StateTemp = ({
 };
 
 export default StateTemp;
-{
-  /* 반복되는 것 : title, todoInputs 자료 중 isDone의 값에 따라 . filter () => .isDone !== isDoneValue */
-}
-{
-  /* filter된 값 map~ => filter 재료 :  title, todoInputs,setTodoInputs, isDoneValue="done" : "isdone",  onComplete, onDelete  */
-}
+// {
+/* 반복되는 것 : title, todoInputs 자료 중 isDone의 값에 따라 . filter () => .isDone !== isDoneValue */
+// }
+/* filter된 값 map~ => filter 재료 :  title, todoInputs,setTodoInputs, isDoneValue="done" : "isdone",  onComplete, onDelete  */
+// }

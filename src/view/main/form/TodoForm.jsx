@@ -35,7 +35,7 @@ export const TodoForm = ({ todoInputs, setTodoInputs }) => {
       alert("빈칸을 전부 채워주세요.");
       return;
     }
-
+    console.log(todoInput);
     setTodoInputs([...todoInputs, { ...todoInput, id: idNum }]);
     setTodoInput(init);
   };

@@ -9,18 +9,19 @@ export const TodoCards = ({
   onDelete,
   onComplete,
 }) => {
-  const { id, title, comment, isDone } = isDoneItem;
   const delBtnText = "삭제하기";
   const doneBtnText = "완료";
   const editBtnText = "수정";
   const saveBtnText = "저장";
   const cancelBtnText = "취소";
-
+  const { id, title, comment, isDone } = isDoneItem;
   const [isEdit, setIsEdit] = useState(false); // 수정 상태 , 저장
   const [editValue, setEditValue] = useState({
     title: title,
     comment: comment,
   });
+
+  console.log(editValue.title);
   const onEditValueChange = (e) => {
     const { name, value } = e.target;
     setEditValue({ ...editValue, [name]: value });
@@ -29,27 +30,28 @@ export const TodoCards = ({
   const onEdit = () => {
     setIsEdit(true);
   };
-
+  // console.log(todoInputs);
   const onEditSave = (e) => {
-    e.preventDefault();
-    setTodoInputs((prevTodos) =>
-      prevTodos.map((editTodo) =>
+    setTodoInputs((todoInputs) =>
+      todoInputs.map((editTodo) =>
         editTodo.id === id
-          ? { ...editTodo, title: editValue.title, comment: editValue.comment }
+          ? {
+              ...editTodo,
+              title: editValue.title,
+              comment: editValue.comment,
+            }
           : editTodo
       )
     );
-    // todoInputs.map((editTodo) =>
-    //   editTodo.id === id
-    //     ? { title: editValue.title, comment: editValue.comment }
-    //     : editTodo
-    // );
-    // console.log(EditTodos);
     setIsEdit(false);
   };
 
   const onCancelEdit = () => {
+    // e.preventDefault();
+    alert(1);
+    // console.log(1);
     setIsEdit(false);
+    // setEditValue({ title: title, comment: comment, isEdit: false });
   };
 
   return (
@@ -78,21 +80,19 @@ export const TodoCards = ({
         </>
       ) : (
         <>
-          <form onClick={onEditSave}>
-            <input
-              type="text"
-              name="title"
-              value={onEditValueChange}
-              onChange={onEditValueChange}
-            />
-            <textarea
-              name="comment"
-              value={onEditValueChange}
-              onChange={onEditValueChange}
-            ></textarea>
-            <Button name={cancelBtnText} onCancelEdit={onCancelEdit} />
-            <Button name={saveBtnText} onEditSave={onEditSave} />
-          </form>
+          <input
+            type="text"
+            name="title"
+            value={editValue.title}
+            onChange={onEditValueChange}
+          />
+          <textarea
+            name="comment"
+            value={editValue.comment}
+            onChange={onEditValueChange}
+          ></textarea>
+          <Button name={cancelBtnText} onCancelEdit={onCancelEdit} />
+          <Button name={saveBtnText} onClick={onEditSave} />
         </>
       )}
     </div>
@@ -100,3 +100,10 @@ export const TodoCards = ({
 };
 
 export default TodoCards;
+
+// todoInputs.map((editTodo) =>
+//   editTodo.id === id
+//     ? { title: editValue.title, comment: editValue.comment }
+//     : editTodo
+// );
+// console.log(EditTodos);
