@@ -19,6 +19,7 @@
 - 프로젝트 기능
 
   - 필수 요구 사항
+  - 선택 사항
   - 파일 구조
 
 <br />
@@ -182,7 +183,7 @@ $ cd todoList-React
 
 <br />
 
-<p><img src="https://github.com/r03181231/todoList-React/assets/152264010/757f242a-81c5-4957-86f2-d64e5e9c19a1" width="400px" align="right"></p>
+<p><img src="https://github.com/r03181231/todoList-React/assets/152264010/43b3609f-d2ae-4348-b0e4-e5f7f18a870b" width="400px" align="right"></p>
 
 
 
@@ -201,14 +202,21 @@ $ cd todoList-React
 - [x] **컴포넌트 구조는 자유롭게 구현해보세요.**
     - 반복되는 컴포넌트를 찾아서, 직접 컴포넌트를 분리해보시고, 분리한 컴포넌트를 `README`에 작성합니다.
 
+<br />
+
+### 2. 선택 사항
+- [x] todo수정 기능
+
 
 <br />
 
 ### 2. 파일 구조
 <div>
-  <p><img src="https://github.com/r03181231/todoList-React/assets/152264010/9e43ae7b-f9a2-4d35-b68c-8619603e0ff8" width="200px" align="left"/><p>
-  <p><img src="https://github.com/r03181231/todoList-React/assets/152264010/1387ac2d-1da7-462e-887c-09b68ec37fa1" width="150px" align="center"/><p>
-  <p><img src="https://github.com/r03181231/todoList-React/assets/152264010/a5a63bd9-d647-41fb-9f1d-8a6fcad0d443" width="200px"/><p>
+  <p><img src="https://github.com/r03181231/todoList-React/assets/152264010/0354e48d-0c30-4c80-aad1-c71ec39b517a" width="200px" align="left"/><p>
+  <p><img src="https://github.com/r03181231/todoList-React/assets/152264010/2b48ba2b-bb20-4a58-bab3-6c2c4cdd994a" width="150px" align="left"/><p>
+     <p><img src="https://github.com/r03181231/todoList-React/assets/152264010/cca5ef62-1038-4003-955f-b0d3888376aa" width="150px" align="left"/><p>
+  <p><img src="https://github.com/r03181231/todoList-React/assets/152264010/5957bf1e-ba4e-4047-a61b-3afb9fc46070" width="150px" align="center"/><p>
+ 
 </div>
 
 
