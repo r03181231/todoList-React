@@ -1,3 +1,4 @@
+// TodoCards.jsx - 수정, 저장, 취소 함수 포함
 import React, { useState } from "react";
 import Button from "common/button/Button";
 import "./todoCards.css";
@@ -20,8 +21,8 @@ export const TodoCards = ({
     title: title,
     comment: comment,
   });
-
-  console.log(editValue.title);
+  const editValueTitle = editValue.title;
+  const editValueComment = editValue.comment;
   const onEditValueChange = (e) => {
     const { name, value } = e.target;
     setEditValue({ ...editValue, [name]: value });
@@ -31,7 +32,7 @@ export const TodoCards = ({
     setIsEdit(true);
   };
   // console.log(todoInputs);
-  const onEditSave = (e) => {
+  const onEditSave = () => {
     setTodoInputs((todoInputs) =>
       todoInputs.map((editTodo) =>
         editTodo.id === id
@@ -47,11 +48,7 @@ export const TodoCards = ({
   };
 
   const onCancelEdit = () => {
-    // e.preventDefault();
-    alert(1);
-    // console.log(1);
     setIsEdit(false);
-    // setEditValue({ title: title, comment: comment, isEdit: false });
   };
 
   return (
@@ -83,15 +80,15 @@ export const TodoCards = ({
           <input
             type="text"
             name="title"
-            value={editValue.title}
+            value={editValueTitle}
             onChange={onEditValueChange}
           />
           <textarea
             name="comment"
-            value={editValue.comment}
+            value={editValueComment}
             onChange={onEditValueChange}
           ></textarea>
-          <Button name={cancelBtnText} onCancelEdit={onCancelEdit} />
+          <Button name={cancelBtnText} onClick={onCancelEdit} />
           <Button name={saveBtnText} onClick={onEditSave} />
         </>
       )}
@@ -100,10 +97,3 @@ export const TodoCards = ({
 };
 
 export default TodoCards;
-
-// todoInputs.map((editTodo) =>
-//   editTodo.id === id
-//     ? { title: editValue.title, comment: editValue.comment }
-//     : editTodo
-// );
-// console.log(EditTodos);

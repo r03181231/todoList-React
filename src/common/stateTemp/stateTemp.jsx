@@ -9,7 +9,6 @@ export const StateTemp = ({
   setTodoInputs,
   onComplete,
   onDelete,
-  onEdit,
 }) => {
   const isDoneTodos = todoInputs.filter(
     (state) => state.isDone === isDoneState
