@@ -31,7 +31,6 @@ export const TodoCardsList = ({ todoInputs, setTodoInputs }) => {
           setTodoInputs={setTodoInputs}
           onComplete={onComplete}
           onDelete={onDelete}
-          // onEdit={onEdit}
         />
       </section>
       <section>
@@ -42,7 +41,6 @@ export const TodoCardsList = ({ todoInputs, setTodoInputs }) => {
           setTodoInputs={setTodoInputs}
           onComplete={onComplete}
           onDelete={onDelete}
-          // onEdit={onEdit}
         />
       </section>
     </>

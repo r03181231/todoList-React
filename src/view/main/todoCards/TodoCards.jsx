@@ -15,6 +15,7 @@ export const TodoCards = ({
   const editBtnText = "수정";
   const saveBtnText = "저장";
   const cancelBtnText = "취소";
+
   const { id, title, comment, isDone } = isDoneItem;
   const [isEdit, setIsEdit] = useState(false); // 수정 상태 , 저장
   const [editValue, setEditValue] = useState({
@@ -31,23 +32,25 @@ export const TodoCards = ({
   const onEdit = () => {
     setIsEdit(true);
   };
-  // console.log(todoInputs);
+
   const onEditSave = () => {
-    setTodoInputs((todoInputs) =>
-      todoInputs.map((editTodo) =>
-        editTodo.id === id
-          ? {
-              ...editTodo,
-              title: editValue.title,
-              comment: editValue.comment,
-            }
-          : editTodo
-      )
-    );
+    setTodoInputs((prevTodoInputs) => {
+      return prevTodoInputs.map((editTodo) => {
+        if (editTodo.id === id) {
+          return {
+            ...editTodo,
+            title: editValueTitle, //새로 들어간 title값
+            comment: editValueComment,
+          };
+        } else {
+          return editTodo;
+        }
+      });
+    });
     setIsEdit(false);
   };
 
-  const onCancelEdit = () => {
+  const onEditCancel = () => {
     setIsEdit(false);
   };
 
@@ -57,7 +60,7 @@ export const TodoCards = ({
         <>
           <h4>{title}</h4>
           <p>{comment}</p>
-          <div className="del-nd-done">
+          <div className="delete-nd-done">
             <Button
               name={isDone ? doneBtnText : cancelBtnText}
               onClick={() => onComplete(id)}
@@ -66,7 +69,7 @@ export const TodoCards = ({
             <Button
               name={delBtnText}
               onClick={() => onDelete(id)}
-              className={"del-btn"}
+              className={"delete-btn"}
             />
             <Button
               name={editBtnText}
@@ -76,21 +79,33 @@ export const TodoCards = ({
           </div>
         </>
       ) : (
-        <>
+        <div className="edit-wrap">
           <input
             type="text"
             name="title"
             value={editValueTitle}
             onChange={onEditValueChange}
+            className="edit-title"
           />
           <textarea
             name="comment"
+            rows={1}
             value={editValueComment}
             onChange={onEditValueChange}
           ></textarea>
-          <Button name={cancelBtnText} onClick={onCancelEdit} />
-          <Button name={saveBtnText} onClick={onEditSave} />
-        </>
+          <div className="cancel-nd-save">
+            <Button
+              name={cancelBtnText}
+              className={"cancel-btn"}
+              onClick={onEditCancel}
+            />
+            <Button
+              name={saveBtnText}
+              className={"save-btn"}
+              onClick={onEditSave}
+            />
+          </div>
+        </div>
       )}
     </div>
   );
