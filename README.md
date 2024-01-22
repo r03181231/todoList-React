@@ -73,7 +73,7 @@
 
 - **editor** : Visual Studio Code
 - **environment** : git, github
-- **development** : HTML5, CSS3, JavascriptES6, react18.2.0
+- **development** : JavascriptES6, react18.2.0, CSS3, HTML5
 
 <br />
 
