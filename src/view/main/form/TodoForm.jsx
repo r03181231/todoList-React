@@ -50,6 +50,7 @@ export const TodoForm = ({ todoInputs, setTodoInputs }) => {
           name="title"
           ref={refTitle}
           value={titleInput}
+          autoFocus
           onChange={onInputHand}
         />
         <label>내용</label>
