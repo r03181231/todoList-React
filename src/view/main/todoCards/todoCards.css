@@ -64,18 +64,22 @@
 .edit-wrap {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .edit-wrap > input {
   margin-top: 10px;
-  padding: 8px;
+  padding: 6px;
+
+  font-size: 1rem;
 }
 
 .edit-wrap > textarea {
   min-width: 300px;
   max-width: 100%;
-  padding: 8px;
+  padding: 6px;
+
+  font-size: 1rem;
 }
 
 .edit-btn {
