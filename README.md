@@ -19,6 +19,7 @@
 - 프로젝트 기능
 
   - 필수 요구 사항
+  - 선택 사항
   - 파일 구조
 
 <br />
@@ -58,7 +59,7 @@
 
 **프로젝트 명** : 오늘만 한다 (Todo-List)
 
-**개발 기간** : 2024. 01.18 ~ 2024.01.19 (2일)
+**개발 기간** : 2024. 01.18 ~ 2024.01.22 (5일)
 
 **프로젝트 소개** : 미루지 않고 오늘 내에 끝낼 수 있는 일을 기록하는 Todo-List 입니다.
 
@@ -182,7 +183,7 @@ $ cd todoList-React
 
 <br />
 
-<p><img src="https://github.com/r03181231/todoList-React/assets/152264010/757f242a-81c5-4957-86f2-d64e5e9c19a1" width="400px" align="right"></p>
+<p><img src="https://github.com/r03181231/todoList-React/assets/152264010/43b3609f-d2ae-4348-b0e4-e5f7f18a870b" width="400px" align="right"></p>
 
 
 
@@ -190,25 +191,41 @@ $ cd todoList-React
 
 ### 1. 필수 요구 사항       
 
-- [x] 제목과 내용을 입력하고, [추가하기] 버튼을 클릭하면 Working에 새로운 Todo가 추가되고 제목 input과 내용 input은 다시 빈 값으로 바뀌도록 구성해주세요.
+- [x] UI 구현하기
+- [x] Todo 추가 하기
+- [x] Todo 삭제 하기
+- [x] Todo 완료 상태 변경하기 (완료 ↔ 진행중)
+      
+  - [x] 제목과 내용을 입력하고, [추가하기] 버튼을 클릭하면 Working에 새로운 Todo가 추가되고 제목 input과 내용 input은 다시 빈 값으로 바뀌도록 구성해주세요.
 
-- [x] Todo의 isDone 상태가 true이면, 상태 버튼의 라벨을 취소, isDone이 false 이면 라벨을 완료 로 조건부 렌더링 해주세요. 위 영상을 보면 버튼 내 라벨이 다른 걸 볼 수 있죠?
+  - [x] Todo의 isDone 상태가 true이면, 상태 버튼의 라벨을 취소, isDone이 false 이면 라벨을 완료 로 조건부 렌더링 해주세요.
 
-- [x] Todo의 상태가 Working 이면 위쪽에 위치하고, Done이면 아래쪽에 위치하도록 구현합니다.
+  - [x] Todo의 상태가 Working 이면 위쪽에 위치하고, Done이면 아래쪽에 위치하도록 구현합니다.
 
-- [x] Layout의 최대 넓이는 1200px, 최소 넓이는 800px로 제한하고, 전체 화면의 가운데로 정렬해주세요.
+  - [x] Layout의 최대 넓이는 1200px, 최소 넓이는 800px로 제한하고, 전체 화면의 가운데로 정렬해주세요.
 
-- [x] **컴포넌트 구조는 자유롭게 구현해보세요.**
-    - 반복되는 컴포넌트를 찾아서, 직접 컴포넌트를 분리해보시고, 분리한 컴포넌트를 `README`에 작성합니다.
+  - [x] **컴포넌트 구조는 자유롭게 구현해보세요.**
+      - 반복되는 컴포넌트를 찾아서, 직접 컴포넌트를 분리해보시고, 분리한 컴포넌트를 `README`에 작성합니다.
+
+<br />
+
+### 2. 선택 사항
+- [x] todo수정 기능 (Update)
+- [x] 추가 기능 form 유효성 검사
+- [x] css - grid, flex
+- [x] 현재 시간 추가
+- [x] 버튼 및 todo영역 템플릿 만들기
 
 
 <br />
 
 ### 2. 파일 구조
 <div>
-  <p><img src="https://github.com/r03181231/todoList-React/assets/152264010/9e43ae7b-f9a2-4d35-b68c-8619603e0ff8" width="200px" align="left"/><p>
-  <p><img src="https://github.com/r03181231/todoList-React/assets/152264010/1387ac2d-1da7-462e-887c-09b68ec37fa1" width="150px" align="center"/><p>
-  <p><img src="https://github.com/r03181231/todoList-React/assets/152264010/a5a63bd9-d647-41fb-9f1d-8a6fcad0d443" width="200px"/><p>
+  <p><img src="https://github.com/r03181231/todoList-React/assets/152264010/0354e48d-0c30-4c80-aad1-c71ec39b517a" width="200px" align="left"/><p>
+  <p><img src="https://github.com/r03181231/todoList-React/assets/152264010/2b48ba2b-bb20-4a58-bab3-6c2c4cdd994a" width="150px" align="left"/><p>
+     <p><img src="https://github.com/r03181231/todoList-React/assets/152264010/cca5ef62-1038-4003-955f-b0d3888376aa" width="150px" align="left"/><p>
+  <p><img src="https://github.com/r03181231/todoList-React/assets/152264010/5957bf1e-ba4e-4047-a61b-3afb9fc46070" width="150px" align="center"/><p>
+ 
 </div>
 
 
