@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./todoForm.css";
 import Button from "../../../common/button/Button";
 
@@ -10,6 +10,7 @@ export const TodoForm = ({ todoInputs, setTodoInputs }) => {
     comment: "",
     isDone: true,
   };
+  const refTitle = useRef(null);
   const [todoInput, setTodoInput] = useState(init);
   let idNum = 1 + todoInputs.length; //Math.random() * 10000
   const titleInput = todoInput.title;
@@ -37,6 +38,7 @@ export const TodoForm = ({ todoInputs, setTodoInputs }) => {
 
     setTodoInputs([...todoInputs, { ...todoInput, id: idNum }]);
     setTodoInput(init);
+    refTitle.current.focus();
   };
 
   return (
@@ -46,6 +48,7 @@ export const TodoForm = ({ todoInputs, setTodoInputs }) => {
         <input
           type="text"
           name="title"
+          ref={refTitle}
           value={titleInput}
           onChange={onInputHand}
         />
