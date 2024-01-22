@@ -213,7 +213,8 @@ $ cd todoList-React
 - [x] todo수정 기능 (Update)
 - [x] 추가 기능 form 유효성 검사
 - [x] css - grid, flex
-- [x] 현재 시간 추가 
+- [x] 현재 시간 추가
+- [x] 버튼 및 todo영역 템플릿 만들기
 
 
 <br />
