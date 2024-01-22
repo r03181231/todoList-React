@@ -26,8 +26,10 @@
   align-items: center;
 }
 
+/* 추가 버튼 */
 .add-btn {
-  background-color: #feb198;
+  background-color: #333;
+  color: white;
   padding: 8px 20px;
 
   border: none;
@@ -36,7 +38,8 @@
   font-size: 1rem;
 }
 
-.add-btn:active {
-  background-color: gray;
-  color: white;
+.add-btn:hover,
+.add-btn:focus {
+  background-color: rgba(128, 128, 128, 0.5);
+  color: #111;
 }

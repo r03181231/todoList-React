@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./todoForm.css";
-import Button from "../../../item/button/Button";
+import Button from "../../../common/button/Button";
 
 export const TodoForm = ({ todoInputs, setTodoInputs }) => {
   const add = "추가";
@@ -36,7 +36,7 @@ export const TodoForm = ({ todoInputs, setTodoInputs }) => {
     }
 
     setTodoInputs([...todoInputs, { ...todoInput, id: idNum }]);
-    setTodoInput({ id: idNum + 1, title: "", comment: "", isDone: true });
+    setTodoInput(init);
   };
 
   return (

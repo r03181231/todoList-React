@@ -1,18 +1,19 @@
 import React from "react";
 import "./todoCardList.css";
-import TodoCards from "../todoCards/TodoCards";
+import StateTemp from "common/stateTemp/stateTemp";
 
 export const TodoCardsList = ({ todoInputs, setTodoInputs }) => {
+  //삭제 버튼
   const onDelete = (clickId) => {
     const stayTodos = todoInputs.filter((stayTodo) => stayTodo.id !== clickId);
     setTodoInputs(stayTodos);
   };
+  //완료 버튼
   const onComplete = (clickId) => {
     const stayTodos = todoInputs.map((done) => {
       const { isDone } = done;
       if (done.id !== clickId) {
-        //1, 2,3,4 => working(true)    1, 1 => Done(false)
-        return { ...done, isDone: isDone };
+        return { ...done };
       } else {
         return { ...done, isDone: !isDone };
       }
@@ -23,50 +24,24 @@ export const TodoCardsList = ({ todoInputs, setTodoInputs }) => {
   return (
     <>
       <section>
-        <div className="cards-wrap">
-          <h3>working </h3>
-          <div className="todo-card-wrap">
-            {todoInputs.map((isDoneItem) => {
-              const { id, isDone } = isDoneItem;
-              if (isDone) {
-                return (
-                  <TodoCards
-                    isDoneItem={isDoneItem}
-                    setTodoInputs={setTodoInputs}
-                    onComplete={onComplete}
-                    key={id}
-                    onDelete={onDelete}
-                  />
-                );
-              } else {
-                return;
-              }
-            })}
-          </div>
-        </div>
+        <StateTemp
+          title={"working"}
+          isDoneState={true}
+          todoInputs={todoInputs}
+          setTodoInputs={setTodoInputs}
+          onComplete={onComplete}
+          onDelete={onDelete}
+        />
       </section>
       <section>
-        <div className="cards-wrap">
-          <h3>Done </h3>
-          <div className="todo-card-wrap">
-            {todoInputs.map((isDoneItem) => {
-              const { id, isDone } = isDoneItem;
-              if (isDone === false) {
-                return (
-                  <TodoCards
-                    isDoneItem={isDoneItem}
-                    setTodoInputs={setTodoInputs}
-                    onComplete={onComplete}
-                    key={id}
-                    onDelete={onDelete}
-                  />
-                );
-              } else {
-                return;
-              }
-            })}
-          </div>
-        </div>
+        <StateTemp
+          title={"Done"}
+          isDoneState={false}
+          todoInputs={todoInputs}
+          setTodoInputs={setTodoInputs}
+          onComplete={onComplete}
+          onDelete={onDelete}
+        />
       </section>
     </>
   );
