@@ -1,21 +1,25 @@
 @charset "utf-8";
 
 .work-nd-done {
+  position: relative;
   padding: 20px;
 
   border-radius: 20px;
   box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.2);
 }
 
-.del-nd-done {
+/* 삭제, 완료 / 취소, 저장버튼 감싸는 틀 */
+.delete-nd-done,
+.cancel-nd-save {
+  position: sticky;
+  bottom: 0px;
   display: flex;
   justify-content: space-between;
 }
 
-.del-btn,
-.done-btn {
+.delete-btn {
   background-color: #feb198;
-  padding: 8px 20px;
+  padding: 8px 10px;
 
   border: none;
   border-radius: 10px;
@@ -23,18 +27,68 @@
   font-size: 1rem;
 }
 
-.del-btn:hover,
-.del-btn:focus {
+.delete-btn:hover,
+.delete-btn:focus {
   background-color: rgba(254, 177, 152, 0.6);
 }
 
-.done-btn {
-  background-color: gray;
+.cancel-btn {
+  background-color: #feb198;
+  padding: 8px 26px;
+
+  border: none;
+  border-radius: 10px;
+
+  font-size: 1rem;
+}
+
+/* 완료버튼과 저장버튼 */
+.done-btn,
+.save-btn {
+  padding: 0px 26px;
+
+  border: none;
+  border-radius: 10px;
+
+  font-size: 1rem;
+  background-color: #333;
   color: white;
 }
 
 .done-btn:hover,
 .done-btn:focus {
   background-color: rgba(128, 128, 128, 0.5);
-  color: #333333;
+  color: #111;
+}
+
+.edit-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.edit-wrap > input {
+  margin-top: 10px;
+  padding: 8px;
+}
+
+.edit-wrap > textarea {
+  min-width: 300px;
+  max-width: 100%;
+  padding: 8px;
+}
+
+.edit-btn {
+  padding: 0px 26px;
+
+  border: 0.1rem solid rgba(99, 99, 99, 0.3);
+  border-radius: 10px;
+
+  font-size: 1rem;
+  background-color: #fff;
+}
+
+.edit-btn:hover {
+  background-color: rgba(99, 99, 99, 0.3);
+  border: 1px solid #fff;
 }

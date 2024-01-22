@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./CurrTime.css";
 
 export const CurrTime = () => {
   const [time, setTime] = useState(new Date());
@@ -7,6 +6,7 @@ export const CurrTime = () => {
     const moment = setInterval(() => setTime(new Date()), 1000);
     return () => clearInterval(moment);
   }, []);
+
   return (
     <>
       <div className="date">
