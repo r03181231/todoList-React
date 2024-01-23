@@ -7,3 +7,6 @@
 
   gap: 40px;
 }
+.view-comment {
+  word-break: break-all;
+}

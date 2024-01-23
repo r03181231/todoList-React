@@ -12,7 +12,7 @@ export const TodoForm = ({ todoInputs, setTodoInputs }) => {
   };
   const refTitle = useRef(null);
   const [todoInput, setTodoInput] = useState(init);
-  let idNum = 1 + todoInputs.length; //Math.random() * 10000
+  let idNum = Date.now(); //Math.random() * 10000
   const titleInput = todoInput.title;
   const commentInput = todoInput.comment;
   const blankPattern = /^\s+|\s+$/g;
@@ -44,17 +44,19 @@ export const TodoForm = ({ todoInputs, setTodoInputs }) => {
   return (
     <section id="todo-form">
       <form onSubmit={onSubmitHand} className="form-wrap">
-        <label>제목</label>
+        <label htmlFor="title">제목</label>
         <input
+          id="title"
           type="text"
           name="title"
-          ref={refTitle}
           value={titleInput}
-          autoFocus
           onChange={onInputHand}
+          ref={refTitle}
+          autoFocus
         />
-        <label>내용</label>
+        <label htmlFor="comment">내용</label>
         <input
+          id="comment"
           type="text"
           name="comment"
           value={commentInput}
