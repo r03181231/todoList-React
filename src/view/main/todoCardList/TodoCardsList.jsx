@@ -1,47 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import "./todoCardList.css";
-import StateTemp from "common/stateTemp/stateTemp";
+import TodoCards from "../todoCards/TodoCards";
 
 export const TodoCardsList = ({ todoInputs, setTodoInputs }) => {
-  //삭제 버튼
-  const onDelete = (clickId) => {
-    const stayTodos = todoInputs.filter((stayTodo) => stayTodo.id !== clickId);
-    setTodoInputs(stayTodos);
-  };
-  //완료 버튼
-  const onComplete = (clickId) => {
-    const stayTodos = todoInputs.map((done) => {
-      const { isDone } = done;
-      if (done.id !== clickId) {
-        return { ...done };
-      } else {
-        return { ...done, isDone: !isDone };
-      }
-    });
-    setTodoInputs(stayTodos);
-  };
-
+  const [isDone, setDone] = useState(true);
+  const trueTodos = todoInputs.filter((state) => state.isDone === isDone);
+  const falseTodos = todoInputs.filter((state) => state.isDone !== isDone);
   return (
     <>
       <section>
-        <StateTemp
-          title={"working"}
-          isDoneState={true}
-          todoInputs={todoInputs}
-          setTodoInputs={setTodoInputs}
-          onComplete={onComplete}
-          onDelete={onDelete}
-        />
+        <div className="cards-wrap">
+          <h3>{isDone ? "working" : "Done"} </h3>
+          <div className="todo-card-wrap">
+            {trueTodos.map((isDoneItem) => {
+              const { id } = isDoneItem;
+              return (
+                <TodoCards
+                  key={id}
+                  isDoneItem={isDoneItem}
+                  todoInputs={todoInputs}
+                  setTodoInputs={setTodoInputs}
+                />
+              );
+            })}
+          </div>
+        </div>
       </section>
       <section>
-        <StateTemp
-          title={"Done"}
-          isDoneState={false}
-          todoInputs={todoInputs}
-          setTodoInputs={setTodoInputs}
-          onComplete={onComplete}
-          onDelete={onDelete}
-        />
+        <div className="cards-wrap">
+          <h3>{!isDone ? "working" : "Done"} </h3>
+          <div className="todo-card-wrap">
+            {falseTodos.map((isDoneItem) => {
+              const { id } = isDoneItem;
+              return (
+                <TodoCards
+                  key={id}
+                  isDoneItem={isDoneItem}
+                  todoInputs={todoInputs}
+                  setTodoInputs={setTodoInputs}
+                />
+              );
+            })}
+          </div>
+        </div>
       </section>
     </>
   );

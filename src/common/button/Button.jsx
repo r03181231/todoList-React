@@ -2,11 +2,9 @@ import React from "react";
 
 export const Button = ({ name, onClick, className }) => {
   return (
-    <>
-      <button className={className} onClick={onClick}>
-        {name}
-      </button>
-    </>
+    <button className={className} onClick={onClick}>
+      {name}
+    </button>
   );
 };
 
