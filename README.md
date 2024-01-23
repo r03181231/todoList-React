@@ -173,6 +173,7 @@
 ```bash
 $ git clone https://github.com/r03181231/todoList-React.git
 $ cd todoList-React
+$ yarn start
 ```
 
 
