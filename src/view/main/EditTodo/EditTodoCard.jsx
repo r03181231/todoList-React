@@ -72,7 +72,7 @@ function EditTodoCard({ isDoneItem, setTodoInputs, setIsEdit }) {
       />
       <textarea
         name="comment"
-        rows={1}
+        rows={2}
         value={editValueComment}
         onChange={onEditValueChange}
       ></textarea>
@@ -85,7 +85,7 @@ function EditTodoCard({ isDoneItem, setTodoInputs, setIsEdit }) {
         value={editValueDeadLine}
         onChange={onEditValueChange}
       />
-      <div className="cancel-nd-save">
+      <div className="btn-cancel-nd-save">
         <Button name={"취소"} className={"cancel-btn"} onClick={onEditCancel} />
         <Button name={"저장"} className={"save-btn"} onClick={onEditSave} />
       </div>

@@ -25,8 +25,8 @@
 }
 
 /* 삭제, 완료 / 취소, 저장버튼 감싸는 틀 */
-.delete-nd-done,
-.cancel-nd-save {
+.btn-delete-nd-done,
+.btn-cancel-nd-save {
   width: 100%;
 
   display: flex;

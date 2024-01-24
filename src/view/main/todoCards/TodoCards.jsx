@@ -58,7 +58,7 @@ export const TodoCards = ({ isDoneItem, todoInputs, setTodoInputs }) => {
               까지
             </p>
 
-            <div className="delete-nd-done">
+            <div className="btn-delete-nd-done">
               <Button
                 name={isDone ? "완료" : "취소"}
                 onClick={() => onComplete(id)}
