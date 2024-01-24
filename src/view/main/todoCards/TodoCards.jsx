@@ -10,6 +10,13 @@ export const TodoCards = ({ isDoneItem, todoInputs, setTodoInputs }) => {
 
   //삭제 버튼
   const onDelete = (clickId) => {
+    // 삭제 유효성
+    if (window.confirm("삭제하시겠습니까?") === true) {
+      alert("수정된 내용이 없습니다.");
+    } else {
+      alert("삭제를 취소하셨습니다.");
+      return;
+    }
     setTodoInputs((prevTodoInputs) =>
       prevTodoInputs.filter((stayTodo) => stayTodo.id !== clickId)
     );
@@ -34,32 +41,34 @@ export const TodoCards = ({ isDoneItem, todoInputs, setTodoInputs }) => {
   };
 
   return (
-    <div className="work-nd-done">
-      {!isEdit ? (
-        <>
-          <h4>{title}</h4>
-          <p className="view-comment">{comment}</p>
-          <div className="delete-nd-done">
-            <Button
-              name={isDone ? "완료" : "취소"}
-              onClick={() => onComplete(id)}
-              className={"done-btn"}
-            />
-            <Button
-              name={"삭제하기"}
-              onClick={() => onDelete(id)}
-              className={"delete-btn"}
-            />
-            <Button name={"수정"} onClick={onEdit} className={"edit-btn"} />
+    <div className="todo-card">
+      <div className="work-nd-done">
+        {!isEdit ? (
+          <div className="todo-card">
+            <h4>{title}</h4>
+            <p className="view-comment">{comment}</p>
+            <div className="delete-nd-done">
+              <Button
+                name={isDone ? "완료" : "취소"}
+                onClick={() => onComplete(id)}
+                className={"done-btn"}
+              />
+              <Button
+                name={"삭제하기"}
+                onClick={() => onDelete(id)}
+                className={"delete-btn"}
+              />
+              <Button name={"수정"} onClick={onEdit} className={"edit-btn"} />
+            </div>
           </div>
-        </>
-      ) : (
-        <EditTodoCard
-          isDoneItem={isDoneItem}
-          setTodoInputs={setTodoInputs}
-          setIsEdit={setIsEdit}
-        />
-      )}
+        ) : (
+          <EditTodoCard
+            isDoneItem={isDoneItem}
+            setTodoInputs={setTodoInputs}
+            setIsEdit={setIsEdit}
+          />
+        )}
+      </div>
     </div>
   );
 };
