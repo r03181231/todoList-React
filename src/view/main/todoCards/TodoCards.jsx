@@ -8,7 +8,6 @@ export const TodoCards = ({ isDoneItem, todoInputs, setTodoInputs }) => {
   const { id, title, comment, isDone, deadLine } = isDoneItem;
   const [isEdit, setIsEdit] = useState(false); // 수정 상태 , 저장
   const [date, setDate] = useState(new Date());
-  console.log(date);
 
   //삭제 버튼
   const onDelete = (clickId) => {
