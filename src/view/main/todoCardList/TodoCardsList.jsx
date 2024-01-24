@@ -3,16 +3,16 @@ import "./todoCardList.css";
 import TodoCards from "../todoCards/TodoCards";
 
 export const TodoCardsList = ({ todoInputs, setTodoInputs }) => {
-  const [isDone, setDone] = useState(true);
-  const trueTodos = todoInputs.filter((state) => state.isDone === isDone);
-  const falseTodos = todoInputs.filter((state) => state.isDone !== isDone);
+  // const isDoneState = todoInputs.filter((state) => state.isDone === true);
+  const doneTrueTodos = todoInputs.filter((state) => state.isDone === true);
+  const doneFalseTodos = todoInputs.filter((state) => state.isDone === false);
   return (
     <>
       <section>
         <div className="cards-wrap">
-          <h3>{isDone ? "working" : "Done"} </h3>
+          <h3>{doneTrueTodos ? "working" : "Done"} </h3>
           <div className="todo-card-wrap">
-            {trueTodos.map((isDoneItem) => {
+            {doneTrueTodos.map((isDoneItem) => {
               const { id } = isDoneItem;
               return (
                 <TodoCards
@@ -28,9 +28,9 @@ export const TodoCardsList = ({ todoInputs, setTodoInputs }) => {
       </section>
       <section>
         <div className="cards-wrap">
-          <h3>{!isDone ? "working" : "Done"} </h3>
+          <h3>{!doneTrueTodos ? "working" : "Done"} </h3>
           <div className="todo-card-wrap">
-            {falseTodos.map((isDoneItem) => {
+            {doneFalseTodos.map((isDoneItem) => {
               const { id } = isDoneItem;
               return (
                 <TodoCards
