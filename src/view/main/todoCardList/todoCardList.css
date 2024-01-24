@@ -11,7 +11,3 @@
 .todo-card {
   grid-row: span min-content;
 }
-
-.view-comment {
-  word-break: break-all;
-}
