@@ -8,10 +8,7 @@ function EditTodoCard({ isDoneItem, setTodoInputs, setIsEdit }) {
     comment: comment,
     deadLine: deadLine,
   });
-  const onInputHand = (e) => {
-    const { name, value } = e.target;
-    setEditValue({ ...editValue, [name]: value });
-  };
+
   // 수정 값 할당 변수
   const editValueTitle = editValue.title;
   const editValueComment = editValue.comment;
@@ -86,7 +83,7 @@ function EditTodoCard({ isDoneItem, setTodoInputs, setIsEdit }) {
         max="2200-12-31"
         className="edit-date"
         value={editValueDeadLine}
-        onChange={onInputHand}
+        onChange={onEditValueChange}
       />
       <div className="cancel-nd-save">
         <Button name={"취소"} className={"cancel-btn"} onClick={onEditCancel} />
