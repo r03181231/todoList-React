@@ -58,7 +58,8 @@
 }
 
 .done-btn:hover,
-.done-btn:focus {
+.done-btn:focus,
+.save-btn:hover {
   background-color: rgba(128, 128, 128, 0.5);
   color: #111;
 }
