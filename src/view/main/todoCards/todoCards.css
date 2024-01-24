@@ -28,7 +28,8 @@
 }
 
 .delete-btn:hover,
-.delete-btn:focus {
+.delete-btn:focus,
+.cancel-btn:hover {
   background-color: rgba(254, 177, 152, 0.6);
 }
 
