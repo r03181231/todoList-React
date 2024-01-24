@@ -9,6 +9,7 @@ export const TodoForm = ({ todoInputs, setTodoInputs }) => {
     title: "",
     comment: "",
     isDone: true,
+    deadLine: "2024-02-05",
   };
   const refTitle = useRef(null);
   const [todoInput, setTodoInput] = useState(init);
