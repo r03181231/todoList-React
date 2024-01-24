@@ -72,7 +72,7 @@ function EditTodoCard({ isDoneItem, setTodoInputs, setIsEdit }) {
       />
       <textarea
         name="comment"
-        rows={2}
+        rows={1}
         value={editValueComment}
         onChange={onEditValueChange}
       ></textarea>
