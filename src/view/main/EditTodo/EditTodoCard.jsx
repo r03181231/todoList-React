@@ -1,5 +1,5 @@
 import Button from "common/button/Button";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 
 function EditTodoCard({ isDoneItem, setTodoInputs, setIsEdit }) {
   const { id, title, comment } = isDoneItem;
@@ -7,34 +7,55 @@ function EditTodoCard({ isDoneItem, setTodoInputs, setIsEdit }) {
     title: title,
     comment: comment,
   });
-
+  // 수정 값 할당 변수
   const editValueTitle = editValue.title;
   const editValueComment = editValue.comment;
-
+  // 값 변화 감지
   const onEditValueChange = (e) => {
     const { name, value } = e.target;
     setEditValue({ ...editValue, [name]: value });
   };
+
+  //수정 저장
   const onEditSave = () => {
+    //유효성
+    const editSaveCheck = window.confirm("수정내용을 저장하시겠습니까?");
+    if (
+      editSaveCheck === true &&
+      editValueTitle === title &&
+      editValueComment === comment
+    ) {
+      alert("수정된 내용이 없습니다");
+      return;
+    }
+    if (editSaveCheck === false) {
+      alert("수정을 취소하셨습니다.");
+      setIsEdit(false);
+      return;
+    }
+
     setTodoInputs((prevTodoInputs) => {
-      return prevTodoInputs.map((editTodo) => {
-        if (editTodo.id === id) {
+      alert("내용을 수정하셨습니다.");
+      return prevTodoInputs.map((prevTodo) => {
+        if (prevTodo.id === id) {
           return {
-            ...editTodo,
+            ...prevTodo,
             title: editValueTitle, //새로 들어간 title값
             comment: editValueComment,
           };
         } else {
-          return editTodo;
+          return prevTodo;
         }
       });
     });
     setIsEdit(false);
   };
-
+  // 수정 취소
   const onEditCancel = () => {
+    alert("수정을 취소하셨습니다.");
     setIsEdit(false);
   };
+
   return (
     <div className="edit-wrap">
       <input
