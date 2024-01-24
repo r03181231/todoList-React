@@ -10,6 +10,7 @@ export const TodoList = () => {
       title: "알고리즘 풀기",
       comment: "2문제",
       isDone: true,
+      deadLine: "2024-02-05",
     },
   ]);
   return (

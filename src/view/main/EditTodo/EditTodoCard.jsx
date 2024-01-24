@@ -2,14 +2,17 @@ import Button from "common/button/Button";
 import React, { useState } from "react";
 
 function EditTodoCard({ isDoneItem, setTodoInputs, setIsEdit }) {
-  const { id, title, comment } = isDoneItem;
+  const { id, title, comment, deadLine } = isDoneItem;
   const [editValue, setEditValue] = useState({
     title: title,
     comment: comment,
+    deadLine: deadLine,
   });
+
   // 수정 값 할당 변수
   const editValueTitle = editValue.title;
   const editValueComment = editValue.comment;
+  const editValueDeadLine = editValue.deadLine;
   // 값 변화 감지
   const onEditValueChange = (e) => {
     const { name, value } = e.target;
@@ -23,7 +26,8 @@ function EditTodoCard({ isDoneItem, setTodoInputs, setIsEdit }) {
     if (
       editSaveCheck === true &&
       editValueTitle === title &&
-      editValueComment === comment
+      editValueComment === comment &&
+      editValueDeadLine === deadLine
     ) {
       alert("수정된 내용이 없습니다");
       return;
@@ -42,6 +46,7 @@ function EditTodoCard({ isDoneItem, setTodoInputs, setIsEdit }) {
             ...prevTodo,
             title: editValueTitle, //새로 들어간 title값
             comment: editValueComment,
+            deadLine: editValueDeadLine,
           };
         } else {
           return prevTodo;
@@ -71,7 +76,16 @@ function EditTodoCard({ isDoneItem, setTodoInputs, setIsEdit }) {
         value={editValueComment}
         onChange={onEditValueChange}
       ></textarea>
-      <div className="cancel-nd-save">
+      <input
+        type="date"
+        name="deadLine"
+        min="1800-01-01"
+        max="2200-12-31"
+        className="edit-date"
+        value={editValueDeadLine}
+        onChange={onEditValueChange}
+      />
+      <div className="btn-cancel-nd-save">
         <Button name={"취소"} className={"cancel-btn"} onClick={onEditCancel} />
         <Button name={"저장"} className={"save-btn"} onClick={onEditSave} />
       </div>

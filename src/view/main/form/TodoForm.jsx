@@ -9,12 +9,14 @@ export const TodoForm = ({ todoInputs, setTodoInputs }) => {
     title: "",
     comment: "",
     isDone: true,
+    deadLine: "2024-02-05",
   };
   const refTitle = useRef(null);
   const [todoInput, setTodoInput] = useState(init);
   let idNum = Date.now(); //Math.random() * 10000
   const titleInput = todoInput.title;
   const commentInput = todoInput.comment;
+  const deadLineInput = todoInput.deadLine;
   const blankPattern = /^\s+|\s+$/g;
   // 들어온 값으로 교체해주기
   const onInputHand = (e) => {
@@ -62,7 +64,17 @@ export const TodoForm = ({ todoInputs, setTodoInputs }) => {
           value={commentInput}
           onChange={onInputHand}
         />
-        <Button name={add} className={"add-btn"} />
+        <label htmlFor="deadLine">마감일</label>
+        <input
+          id="deadLine"
+          type="date"
+          name="deadLine"
+          min="1800-01-01"
+          max="2200-12-31"
+          value={deadLineInput}
+          onChange={onInputHand}
+        />
+        <Button name={add} className={"add-btn"} bgc={"#333"} />
       </form>
     </section>
   );

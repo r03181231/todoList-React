@@ -5,8 +5,9 @@ import "./todoCards.css";
 import EditTodoCard from "../EditTodo/EditTodoCard";
 
 export const TodoCards = ({ isDoneItem, todoInputs, setTodoInputs }) => {
-  const { id, title, comment, isDone } = isDoneItem;
+  const { id, title, comment, isDone, deadLine } = isDoneItem;
   const [isEdit, setIsEdit] = useState(false); // 수정 상태 , 저장
+  const [date, setDate] = useState(new Date());
 
   //삭제 버튼
   const onDelete = (clickId) => {
@@ -47,7 +48,16 @@ export const TodoCards = ({ isDoneItem, todoInputs, setTodoInputs }) => {
           <div className="todo-card">
             <h4>{title}</h4>
             <p className="view-comment">{comment}</p>
-            <div className="delete-nd-done">
+            <p className="view-date">
+              {new Date(deadLine).toLocaleDateString("ko-KR", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+              까지
+            </p>
+
+            <div className="btn-delete-nd-done">
               <Button
                 name={isDone ? "완료" : "취소"}
                 onClick={() => onComplete(id)}
