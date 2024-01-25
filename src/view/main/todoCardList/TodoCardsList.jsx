@@ -15,7 +15,6 @@ export const TodoCardsList = ({ todoInputs, setTodoInputs }) => {
         return new Date(b.deadLine) - new Date(a.deadLine);
       }
     });
-    console.log(orderDeadLine);
     setTodoInputs(orderDeadLine);
   };
 
