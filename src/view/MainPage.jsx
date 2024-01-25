@@ -6,13 +6,11 @@ import Layout from "./layout/Layout";
 
 export const MainPage = () => {
   return (
-    <>
-      <Layout>
-        <Nav />
-        <TodoList />
-        <CopyRight />
-      </Layout>
-    </>
+    <Layout>
+      <Nav />
+      <TodoList />
+      <CopyRight />
+    </Layout>
   );
 };
 
