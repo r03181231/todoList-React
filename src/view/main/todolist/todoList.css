@@ -5,6 +5,10 @@ main {
   flex-direction: column;
   gap: 30px;
 }
+
+.sort-wrap {
+  padding: 10px;
+}
 .todo-card-wrap {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
