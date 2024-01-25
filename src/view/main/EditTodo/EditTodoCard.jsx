@@ -1,13 +1,10 @@
 import Button from "common/button/Button";
 import React, { useState } from "react";
+import "./editTodoCard.css";
 
 function EditTodoCard({ isDoneItem, setTodoInputs, setIsEdit }) {
   const { id, title, comment, deadLine } = isDoneItem;
-  const [editValue, setEditValue] = useState({
-    title: title,
-    comment: comment,
-    deadLine: deadLine,
-  });
+  const [editValue, setEditValue] = useState({ id, title, comment, deadLine });
 
   // 수정 값 할당 변수
   const editValueTitle = editValue.title;
@@ -48,9 +45,8 @@ function EditTodoCard({ isDoneItem, setTodoInputs, setIsEdit }) {
             comment: editValueComment,
             deadLine: editValueDeadLine,
           };
-        } else {
-          return prevTodo;
         }
+        return prevTodo;
       });
     });
     setIsEdit(false);

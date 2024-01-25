@@ -2,18 +2,18 @@ import React, { useRef, useState } from "react";
 import "./todoForm.css";
 import Button from "../../../common/button/Button";
 
-export const TodoForm = ({ todoInputs, setTodoInputs }) => {
+export const TodoForm = ({ setTodoInputs }) => {
   const add = "추가";
   const init = {
-    id: 1,
+    id: crypto.randomUUID(),
     title: "",
     comment: "",
     isDone: true,
     deadLine: "2024-02-05",
   };
-  const refTitle = useRef(null);
+
   const [todoInput, setTodoInput] = useState(init);
-  let idNum = Date.now(); //Math.random() * 10000
+  const refTitle = useRef(null);
   const titleInput = todoInput.title;
   const commentInput = todoInput.comment;
   const deadLineInput = todoInput.deadLine;
@@ -28,6 +28,7 @@ export const TodoForm = ({ todoInputs, setTodoInputs }) => {
     e.preventDefault();
     const titleBlank = titleInput.replace(blankPattern, "");
     const commentBlank = commentInput.replace(blankPattern, "");
+
     // 공백이면 아무 것도 리턴하지 않게 해줘.
     if (titleBlank === "" && commentBlank === "") {
       alert("빈칸을 전부 채워주세요.");
@@ -37,8 +38,7 @@ export const TodoForm = ({ todoInputs, setTodoInputs }) => {
       alert("빈칸을 전부 채워주세요.");
       return;
     }
-
-    setTodoInputs([...todoInputs, { ...todoInput, id: idNum }]);
+    setTodoInputs((prevTodos) => [{ ...todoInput }, ...prevTodos]);
     setTodoInput(init);
     refTitle.current.focus();
   };
