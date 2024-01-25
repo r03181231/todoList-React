@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./todoList.css";
 import TodoForm from "../form/TodoForm";
-import Temp from "common/temp/Temp";
+import Temp from "common/CardTemp/CardTemp";
 
 export const TodoList = () => {
   const [todoInputs, setTodoInputs] = useState([]);

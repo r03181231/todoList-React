@@ -1,7 +1,7 @@
 import React from "react";
 import TodoCards from "view/main/todoCards/TodoCards";
 
-function Temp({ isDone, setTodoInputs }) {
+const CardTemp = ({ isDone, setTodoInputs }) => {
   const isWorking = isDone.find((state) => state.isDone === true);
   return (
     <section>
@@ -22,6 +22,6 @@ function Temp({ isDone, setTodoInputs }) {
       </div>
     </section>
   );
-}
+};
 
-export default Temp;
+export default CardTemp;
