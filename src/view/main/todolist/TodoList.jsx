@@ -36,8 +36,16 @@ export const TodoList = () => {
           </select>
         </div>
       </section>
-      <CardTemp isDoneArr={doneTrueTodos} setTodoInputs={setTodoInputs} />
-      <CardTemp isDoneArr={doneFalseTodos} setTodoInputs={setTodoInputs} />
+      <CardTemp
+        isDoneState={true}
+        isDoneArr={doneTrueTodos}
+        setTodoInputs={setTodoInputs}
+      />
+      <CardTemp
+        isDoneState={false}
+        isDoneArr={doneFalseTodos}
+        setTodoInputs={setTodoInputs}
+      />
     </main>
   );
 };
