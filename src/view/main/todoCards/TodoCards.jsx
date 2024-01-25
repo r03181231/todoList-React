@@ -1,10 +1,10 @@
 // TodoCards.jsx - 수정, 저장, 취소 함수 포함
 import React, { useState } from "react";
+import EditTodoCard from "../EditTodo/EditTodoCard";
 import Button from "common/button/Button";
 import "./todoCards.css";
-import EditTodoCard from "../EditTodo/EditTodoCard";
 
-export const TodoCards = ({ isDoneItem, todoInputs, setTodoInputs }) => {
+export const TodoCards = ({ isDoneItem, setTodoInputs }) => {
   const { id, title, comment, isDone, deadLine } = isDoneItem;
   const [isEdit, setIsEdit] = useState(false); // 수정 상태 , 저장
 
@@ -18,7 +18,7 @@ export const TodoCards = ({ isDoneItem, todoInputs, setTodoInputs }) => {
   const onDelete = (clickId) => {
     // 삭제 유효성
     if (window.confirm("삭제하시겠습니까?") === true) {
-      alert("수정된 내용이 없습니다.");
+      alert("삭제되었습니다.");
     } else {
       alert("삭제를 취소하셨습니다.");
       return;
@@ -54,7 +54,6 @@ export const TodoCards = ({ isDoneItem, todoInputs, setTodoInputs }) => {
             <h4>{title}</h4>
             <p className="view-comment">{comment}</p>
             <p className="view-date">{date}까지</p>
-
             <div className="btn-delete-nd-done">
               <Button
                 name={isDone ? "완료" : "취소"}

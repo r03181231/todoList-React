@@ -1,23 +1,43 @@
 import React, { useState } from "react";
-import TodoCardsList from "view/main/todoCardList/TodoCardsList";
-import "./todolist.css";
+import "./todoList.css";
 import TodoForm from "../form/TodoForm";
+import Temp from "common/temp/Temp";
 
 export const TodoList = () => {
-  const [todoInputs, setTodoInputs] = useState([
-    {
-      id: 1,
-      title: "알고리즘 풀기",
-      comment: "2문제",
-      isDone: true,
-      deadLine: "2024-02-05",
-    },
-  ]);
+  const [todoInputs, setTodoInputs] = useState([]);
+  const doneTrueTodos = todoInputs.filter((state) => state.isDone === true);
+  const doneFalseTodos = todoInputs.filter((state) => state.isDone === false);
+  const [sort, setSort] = useState("asc");
+
+  const sortOrder = () => {
+    const orderDeadLine = todoInputs.sort((a, b) => {
+      if (sort === "asc") {
+        return new Date(a.deadLine) - new Date(b.deadLine);
+      } else {
+        return new Date(b.deadLine) - new Date(a.deadLine);
+      }
+    });
+    setTodoInputs(orderDeadLine);
+  };
+
+  const onSortValue = (e) => {
+    setSort(e.target.value);
+    sortOrder();
+  };
 
   return (
     <main>
-      <TodoForm todoInputs={todoInputs} setTodoInputs={setTodoInputs} />
-      <TodoCardsList todoInputs={todoInputs} setTodoInputs={setTodoInputs} />
+      <TodoForm setTodoInputs={setTodoInputs} />
+      <section>
+        <div className="sort-wrap">
+          <select name="sort" value={sort} onChange={onSortValue}>
+            <option value="asc">먼일순</option>
+            <option value="desc">가까운일순</option>
+          </select>
+        </div>
+      </section>
+      <Temp isDone={doneTrueTodos} setTodoInputs={setTodoInputs} />
+      <Temp isDone={doneFalseTodos} setTodoInputs={setTodoInputs} />
     </main>
   );
 };
