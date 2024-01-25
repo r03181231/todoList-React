@@ -18,7 +18,7 @@ export const TodoCardsList = ({ todoInputs, setTodoInputs }) => {
     setTodoInputs(orderDeadLine);
   };
 
-  const onChange = (e) => {
+  const onSortValue = (e) => {
     setSort(e.target.value);
     sortOrder();
   };
@@ -26,7 +26,7 @@ export const TodoCardsList = ({ todoInputs, setTodoInputs }) => {
     <>
       <section>
         <div className="sort-wrap">
-          <select name="sort" value={sort} onChange={onChange}>
+          <select name="sort" value={sort} onChange={onSortValue}>
             <option value="asc">먼일순</option>
             <option value="desc">가까운일순</option>
           </select>
