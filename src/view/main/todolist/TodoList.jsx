@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./todoList.css";
 import TodoForm from "../form/TodoForm";
-import Temp from "common/CardTemp/CardTemp";
+import CardTemp from "common/CardTemp/CardTemp";
 
 export const TodoList = () => {
   const [todoInputs, setTodoInputs] = useState([]);
@@ -36,8 +36,8 @@ export const TodoList = () => {
           </select>
         </div>
       </section>
-      <Temp isDone={doneTrueTodos} setTodoInputs={setTodoInputs} />
-      <Temp isDone={doneFalseTodos} setTodoInputs={setTodoInputs} />
+      <CardTemp isDoneArr={doneTrueTodos} setTodoInputs={setTodoInputs} />
+      <CardTemp isDoneArr={doneFalseTodos} setTodoInputs={setTodoInputs} />
     </main>
   );
 };
