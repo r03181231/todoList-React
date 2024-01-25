@@ -186,7 +186,7 @@ $ yarn start
 
 <br />
 
-<p><img src="https://github.com/r03181231/todoList-React/assets/152264010/43b3609f-d2ae-4348-b0e4-e5f7f18a870b" width="400px" align="right"></p>
+<p><img src="https://github.com/r03181231/todoList-React/assets/152264010/0497c377-36bc-4780-b60d-a8dafec18341" width="400px" align="right"></p>
 
 
 
@@ -226,9 +226,9 @@ $ yarn start
 ### 2. 파일 구조
 <div>
   <p><img src="https://github.com/r03181231/todoList-React/assets/152264010/0354e48d-0c30-4c80-aad1-c71ec39b517a" width="200px" align="left"/><p>
-  <p><img src="https://github.com/r03181231/todoList-React/assets/152264010/2b48ba2b-bb20-4a58-bab3-6c2c4cdd994a" width="150px" align="left"/><p>
-     <p><img src="https://github.com/r03181231/todoList-React/assets/152264010/cca5ef62-1038-4003-955f-b0d3888376aa" width="150px" align="left"/><p>
-  <p><img src="https://github.com/r03181231/todoList-React/assets/152264010/5957bf1e-ba4e-4047-a61b-3afb9fc46070" width="150px" align="center"/><p>
+  <p><img src="https://github.com/r03181231/todoList-React/assets/152264010/4dd179b5-7b03-4796-86bf-396b79f45229" width="150px" align="left"/><p>
+     <p><img src="https://github.com/r03181231/todoList-React/assets/152264010/900a5fde-ecda-4488-949e-32e1f6c9c35d" width="150px" align="left"/><p>
+  <p><img src="https://github.com/r03181231/todoList-React/assets/152264010/9c132c07-cf5c-4cfa-92e7-62534427733a" width="150px" align="center"/><p>
  
 </div>
 
