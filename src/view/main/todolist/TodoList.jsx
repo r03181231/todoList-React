@@ -13,6 +13,7 @@ export const TodoList = () => {
       deadLine: "2024-02-05",
     },
   ]);
+
   return (
     <main>
       <TodoForm todoInputs={todoInputs} setTodoInputs={setTodoInputs} />

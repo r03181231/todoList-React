@@ -18,7 +18,7 @@
 .form-wrap {
   display: flex;
 
-  gap: 10px;
+  gap: 20px;
 }
 
 .form-wrap > label {
@@ -33,6 +33,7 @@
 
 /* 추가 버튼 */
 .add-btn {
+  background-color: #333;
   color: white;
   padding: 8px 20px;
 

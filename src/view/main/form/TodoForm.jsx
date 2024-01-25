@@ -74,7 +74,7 @@ export const TodoForm = ({ todoInputs, setTodoInputs }) => {
           value={deadLineInput}
           onChange={onInputHand}
         />
-        <Button name={add} className={"add-btn"} bgc={"#333"} />
+        <Button name={add} className={"add-btn"} />
       </form>
     </section>
   );
